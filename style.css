@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+:root {
+    --Cyan: hsl(179, 62%, 43%);
+    --Bright-Yellow: hsl(71, 73%, 54%);
+    --Light-Gray: hsl(204, 43%, 93%);
+    --Grayish-Blue: hsl(218, 22%, 67%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: aliceblue;
+}
+
+main {
+    width: fit-content;
+    margin-inline: auto;
+}
+
+section {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 700px;
+    margin-inline: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.card {
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    width: 0%;
+    height: 0%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #eeeeee36;
+
+}
+
+.card:hover::before {
+    animation: flashing 0.7s;
+    -webkit-animation: flashing 0.7s;
+}
+
+.card h1,
+.card h2 {
+    margin-bottom: 1.2rem;
+}
+
+.top {
+    background-color: white;
+    width: 100%;
+}
+
+.top h1 {
+    font-size: 1.6rem;
+    color: var(--Cyan);
+}
+
+.top .yellow {
+    color: var(--Bright-Yellow);
+    margin-bottom: 0.9rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.top p:last-child {
+    color: var(--Grayish-Blue);
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.bottom {
+    width: 50%;
+    color: var(--Light-Gray);
+}
+
+
+
+.bottom h2 {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.bottom:nth-child(2) {
+    background-color: var(--Cyan);
+}
+
+.bottom:nth-child(3) {
+    background-color: hsl(179, 62%, 43%, 80%);
+    ;
+
+}
+
+.subscrip .price {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.subscrip .price span:first-child {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 1rem;
+    color: white;
+}
+
+
+.subscrip button {
+    background-color: var(--Bright-Yellow);
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    height: 45px;
+    width: 100%;
+    border: none;
+    margin-top: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.subscrip button:active {
+    background-color: hsl(71, 63%, 46%);
+    ;
+}
+
+.why-us {
+    line-height: 1.3;
+}
+
+@media (max-width:600px) {
+    main {
+        padding-top: 2rem;
+    }
+
+    .bottom {
+        width: 100%;
+    }
+}
+
+footer {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(20, 157, 220);
+}
+
+@keyframes flashing {
+
+    0%,
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        width: 200%;
+        height: 200%;
+    }
+
+}
